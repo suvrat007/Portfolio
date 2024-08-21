@@ -5,13 +5,20 @@ body{
     letter-spacing: 2px;
     display: flex;
     flex-wrap: wrap;
-    max-width: 90%;
+    max-width: 85%;
     margin: 0 auto;
     flex-direction: column;
     /* overflow: hidden; */
-    background-image: url('pic 1.jpg');
+    /* background-image: url('pic 1.jpg');
     background-repeat: no-repeat;
-    background-size: cover;   
+    background-size: cover;    */
+    background-image: linear-gradient(
+  310deg,
+  hsl(251deg 95% 8%) 1%,
+  hsl(263deg 85% 32%) 44%,
+  hsl(263deg 85% 32%) 54%,
+  hsl(251deg 95% 8%) 100%
+);
     
 
 }
@@ -31,6 +38,8 @@ body{
     height: 88vh;
     max-width: 100vw;
     overflow: hidden;
+    border-radius: 25px;
+    
 }
 .intro-text{
     top: 35%;
@@ -51,15 +60,11 @@ body{
 
 .bg-image{
     position: relative;
-    max-width: 400px;
-    top:-7%;
-    left: 60%;
-    opacity: 95%;
-    animation: imageEntry 1s ease-in;
-    rotate: -7deg;
+    max-width: 500px;
+    top: -15%;
+    left: 55%;
+    /* rotate: -7deg; */
     border-radius: 10px;
-    /* box-shadow: 5px 5px 6px gainsboro; */
-    /* border: rebeccapurple 2px solid; */
     padding: 0;
     margin-top: 0;
 
@@ -112,11 +117,9 @@ body{
 .nav-bar{
     position: fixed;
     display: flex;
-    width: 90%;
+    width: 85%;
     /* border: rebeccapurple 2px solid; */
     font-size: 1.2em;
-    
-
     
 }
 .nav-items{
@@ -206,10 +209,10 @@ body{
 
 .wave-border{
     position: relative;
-    bottom:0;
+    bottom:18%;
     background-size: 1000px 100px;
     width: 75%;
-    max-height: 95px;  
+    max-height: 90px;  
    
 }
 
@@ -236,19 +239,46 @@ body{
     padding: 12% 100px;
     font-size: 400%;
 }
+.touch{
+    /* border: red 2px solid; */
+    position: absolute;
+    top: 62%;
+    font-family: inherit;
+    margin: -7px;
+    font-size: 0.9em;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
 
 .about{
     /* border: rebeccapurple 2px  solid; */
-    height: 78vh;
-    margin:  10% 0;
+    height: 50vh;
+    margin:  6% 0;
     display: flex;
-    border-top: white solid 2px;
-    border-bottom: white solid 2px;
+    border-radius: 75px;
+    box-shadow: rgba(17, 17, 26, 0.15) 0px 4px 16px, rgba(17, 17, 26, 0.15) 0px 8px 24px, rgba(17, 17, 26, 0.15) 0px 16px 56px;
+
+}
+.about-heading{
+    margin-top: 0;
+    /* padding-right: 5%;     */
     
 }
 
 .about-me{
-    padding-top: 20%;
+    padding: 1% 5%;
+    animation: hover 0.5s ease-in;
+}
+
+@keyframes hover {
+    0%{
+        opacity: 80%;
+        transform: translateY(10px);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0);
+    }
 }
 
 .about-heading{
@@ -266,6 +296,128 @@ body{
 }
 
 
+.left-margin {
+    position: fixed;
+    top: 20%;
+    width: 7%;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 10px; */
+    z-index: 10;
+    left: 0; /* Stick to the left */
+    padding-left: 00px;
+    font-size: 1.35em;
+    color: white;
+    writing-mode: vertical-rl; 
+    /* transform: rotate(180deg); */
+    padding-top: 0;
+}
 
+
+
+.social-media-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #007bff; /* Change this color as per your preference */
+}
+
+/* Individual colors for each icon (optional) */
+.social-icon.github:hover {
+    color: #4078c0; /* GitHub blue */
+}
+
+.social-icon.instagram:hover {
+    color: #e4405f; /* Instagram pink */
+}
+
+.social-icon.twitter:hover {
+    color: #1da1f2; /* Twitter blue */
+}
+
+.social-icon.linkedin:hover {
+    color: #0077b5; /* LinkedIn blue */
+}
+
+.social-icon.leetcode:hover {
+    color: #FFA116; /* LeetCode orange */
+}
+
+
+/* slider */
+
+.slider-container {
+    width: inherit;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.4s ease;
+    padding-bottom: 5%;
+
+}
+
+.slide {
+    min-width: 25%; /* Adjust width to show 4 projects side by side */
+    height: 400px; /* Adjust height as needed */
+    margin-right: 20px;
+    border-radius: 10%;
+    background-color:rgba(0, 0, 0, 0.22); /* Placeholder background */
+    
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    position: relative;
+    
+}
+
+.nav-button {
+    /* position: absolute; */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+#prev {
+    position: relative;
+    left: -5%;
+}
+
+#next {
+    position: relative;
+    right: -99%;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.projPic{
+    position: absolute;
+    width: 90%;
+    height: 45%;
+    padding: 5%;
+    border-radius: 40px;
+}
 
 
