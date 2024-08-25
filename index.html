@@ -9,18 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bebas+Neue&family=Kalam:wght@300;400;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Playwrite+BE+VLG:wght@100..400&family=Sankofa+Display&family=Teko:wght@300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    
 </head>
 <body>
 
     <div class="nav-bar">
         <!-- <h4 class="logo">SUV</h4> -->
         <ul class="nav-items">
-            <li class="nav-item">About Me</li>
+            <li class="nav-item"><a href="#about">About Me</a></li>
             <li class="nav-item">Qualifications</li>
             <button class="nav-item hire">HIRE ME</button>
-            <li class="nav-item">Projects</li>
-            <li class="nav-item">Contact Info</li>
+            <li class="nav-item"><a href="#proj">Projects</a></li>
+            <li class="nav-item"><a href="#contact">Contact Info</a></li>
             
         </ul>
     </div>
@@ -49,7 +49,7 @@
     </section>
 
 
-    <section class="about">
+    <section class="about" id="about">
         <h3 class="about-heading">ABOUT ME</h3>
         <p class="about-me">
             I'm a 20-year-old BTech student with a strong passion for Data Structures, Algorithms, and Web Development. My curiosity drives me to explore the digital world and solve complex problems with creative solutions.
@@ -63,42 +63,64 @@
         
     </section>
 
-    <section class="Projects">
+    <section class="Projects" id="proj">
+        <h1 class="proj-text">PROJECTS</h1> 
         <div class="slider-container">
             <div class="slider" id="slider">
                 <div class="slide">
                     <img src="Picture1.png" alt="project1" class="projPic">
-                    <!-- Content for Project 1 -->
+                    <video src="Verify Account - Brave 2024-08-24 17-08-53.mp4" class="projVid"></video>
+                    <p id="slider-content">Inputs numeric verification code entered by the user in a smooth manner</p>
+                    <a href="https://github.com/suvrat007/Projects/tree/projects/varify%20account%20ui" class="slider-logo"><i class="fab fa-github"></i></a>
+                    
                 </div>
                 <div class="slide">
                     <img src="Picture2.png" alt="project2" class="projPic">
+                    <video src="Theme Clock - Brave 2024-08-24 17-10-45.mp4" class="projVid"></video>
+                    <p id="slider-content">Dynamic customisable clock showing time at present.</p>
+                    <a href="https://github.com/suvrat007/Projects/tree/projects/theme%20clock" class="slider-logo"><i class="fab fa-github"></i></a>
 
-                    <!-- Content for Project 2 -->
+                    
                 </div>
                 <div class="slide">
                     <img src="Picture3.png" alt=" project3" class="projPic">
+                    <video src="Testimonial Box - Brave 2024-08-24 17-15-00.mp4" class="projVid"></video>
+                    <p id="slider-content">Shows testimonials by fetching APIs and making a timer.</p>
+                    <a href="https://github.com/suvrat007/Projects/tree/projects/testiminial%20box%20switcher" class="slider-logo"><i class="fab fa-github"></i></a>
 
-                    <!-- Content for Project 3 -->
+                    
                 </div>
                 <div class="slide">
                     <img src="Picture4.png" alt="project4" class="projPic">
+                    <video src="Pokedex - Brave 2024-08-24 17-22-36.mp4" class="projVid"></video>
+                    <p id="slider-content">Made a pokemon information centre taking info by fetching API.</p>
+                    <a href="https://github.com/suvrat007/Projects/tree/projects/pokedex" class="slider-logo"><i class="fab fa-github"></i></a>
 
-                    <!-- Content for Project 4 -->
+                    
                 </div>
                 <div class="slide">
                     <img src="Picture5.png" alt="project5" class="projPic">
+                    <video src="Catch The Insect - Brave 2024-08-24 17-20-39.mp4" class="projVid"></video>
+                    <p id="slider-content">A silly little game using the blend HTML, CSS, & JS</p>
+                    <a href="https://github.com/suvrat007/Projects/tree/projects/insect%20catch%20game" class="slider-logo"><i class="fab fa-github"></i></a>
 
-                    <!-- Content for Project 4 -->
+                    
                 </div>
                 <div class="slide">
                     <img src="Picture6.png" alt="project6" class="projPic">
+                    <video src="Quiz App - Brave 2024-08-24 17-23-38.mp4" class="projVid"></video>
+                    <p id="slider-content">A little and fun Quiz with hard coded questions and using javascript</p>
+                    <a href="https://github.com/suvrat007/Projects/tree/projects/quiz%20app" class="slider-logo"><i class="fab fa-github"></i></a>
 
-                    <!-- Content for Project 4 -->
+                    
                 </div>
                 <div class="slide">
                     <img src="Picture7.png" alt="project7" class="projPic">
+                    <video src="Todo List - Brave 2024-08-24 17-24-58.mp4" class="projVid"></video>
+                    <p id="slider-content">Made a notes app using Local storage of browser and javascript</p>
+                    <a href="https://github.com/suvrat007/Projects/tree/projects/todo%20list" class="slider-logo"><i class="fab fa-github"></i></a>
 
-                    <!-- Content for Project 4 -->
+
                 </div>
             </div>
         </div>
@@ -109,27 +131,33 @@
     <div class="left-margin">
         <div class="left-margin-content">
             <div class="social-media-icons">
-                <a href="https://github.com/your-profile" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/your-profile" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/your-profile" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
-                <a href="https://leetcode.com/your-profile" target="_blank" class="social-icon leetcode"><i class="fas fa-code"></i></a>
+                <a href="https://github.com/suvrat007" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/le.suv/" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/suvrat_007" target="_blank" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/suvrat-mittal-05b642294/" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://leetcode.com/u/suvrat_mi/" target="_blank" class="social-icon leetcode"><i class="fas fa-code"></i></a>
                 
-            </div>
-            
+            </div>            
         </div>
     </div>
 
 
-    
-
-    
-    <section class="work-together">
-        <div class="upper-line"></div>
+    <section class="work-together" id="contact">
+        
         <h1 class="work-text">LET'S WORK TOGETHER</h1>
         <button class="nav-item touch">Get In Touch</button>
-        <div class="lower-line"></div>
+        <!-- <div class="social-media">
+            <a href="https://github.com/suvrat007" target="_blank" class="icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/le.suv/" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/suvrat_007" target="_blank" class="icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/suvrat-mittal-05b642294/" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://leetcode.com/u/suvrat_mi/" target="_blank" class="icon"><i class="fas fa-code"></i></a>
+            
+        </div>  -->
+        
     </section>
+
+   
 
 
 

@@ -120,15 +120,18 @@ body{
     width: 85%;
     /* border: rebeccapurple 2px solid; */
     font-size: 1.2em;
+    background-color: rgba(0, 0,0, 0.3);
+    border-radius:40px ;
+    z-index: 10;
+    top: 10px;
     
 }
 .nav-items{
     display: flex;
-    gap: 50px;
     justify-content: space-between;
     /* border: rebeccapurple 2px solid; */
     width: 100%;
-    padding: 5px 30px;
+    padding: .4em 2em;
 
 }
 .nav-item{
@@ -216,35 +219,31 @@ body{
    
 }
 
-
+/* work together */
 
 .work-together{
     /* border: rebeccapurple 2px  solid; */
-    margin-top:4%;
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 6%;
-    border-top: white solid 2px;
-    border-bottom: white solid 2px;
-    height: 76vh;
-
+    bottom: 6%;
+    border-radius: 50px;
 
 }
 
 .work-text{
     position: relative;
-    padding: 12% 100px;
+    padding: 0 20%;
     font-size: 400%;
 }
 .touch{
     /* border: red 2px solid; */
-    position: absolute;
-    top: 62%;
+    position: relative;
+    /* top: 70%; */
     font-family: inherit;
-    margin: -7px;
+    /* margin: -7px;     */
     font-size: 0.9em;
     border-radius: 20px;
     padding: 10px 20px;
@@ -379,16 +378,17 @@ body{
     margin-right: 20px;
     border-radius: 10%;
     background-color:rgba(0, 0, 0, 0.22); /* Placeholder background */
-    
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
     position: relative;
-    
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 .nav-button {
-    /* position: absolute; */
-    top: 50%;
-    transform: translateY(-50%);
+    position: absolute;
+    /* top: 50%; */
+    transform: translateY(-600%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -396,6 +396,7 @@ body{
     cursor: pointer;
     border-radius: 50%;
     font-size: 20px;
+    z-index: 20;
 }
 
 #prev {
@@ -411,8 +412,13 @@ body{
 .nav-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
-
-.projPic{
+.proj-text{
+    position: relative;
+    left: 2.5%;
+    font-size: 2em;
+    margin-bottom:3% ;
+}
+.projPic, .projVid{
     position: absolute;
     width: 90%;
     height: 45%;
@@ -420,4 +426,47 @@ body{
     border-radius: 40px;
 }
 
+.projVid {
+    display: none;
+}
 
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/* text in slide */
+#slider-content{
+    position: relative;
+    top: 50%;
+    padding: 5%;
+}
+.slider-logo{
+    position: relative;
+    top: 80%;
+    left: 60%;  
+    font-size: 30px;  
+}
+
+footer{
+    margin: 0 auto;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.5); /* Placeholder background */
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    
+    align-items: center;
+    text-align: center;
+    padding: 12% 0;
+    bottom: 0;
+    z-index: 10;    
+    
+}
+
+.icon{
+    /* border: red 2px solid; */
+    padding: .6em;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-size: 40px;
+}
