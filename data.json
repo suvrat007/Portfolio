@@ -1,0 +1,74 @@
+{
+    "navItems": [
+        {"label": "Home", "href": "#intro"},
+        {"label": "About Me", "href": "#about"},
+        {"label": "HIRE ME", "href": "#", "type": "button"},
+        {"label": "Projects", "href": "#proj"},
+        {"label": "Contact Info", "href": "#contact"}
+    ],
+    "intro": {
+        "name": "HI! I AM SUVRAT MITTAL",
+        "introText": "I am a B.Tech student in 2nd Year",
+        "bgImage": "White Minimal Typographic Quote Facebook Video.gif",
+        "waves": [
+            "border-img/border-img/1.png",
+            "border-img/border-img/2.png",
+            "border-img/border-img/3.png"
+        ]
+    },
+    "about": {
+        "heading": "ABOUT ME",
+        "content": "I'm a 20-year-old BTech student with a strong passion for Data Structures, Algorithms, and Web Development. My curiosity drives me to explore the digital world and solve complex problems with creative solutions. <br><br>Technology has always fascinated me, fueling my journey to learn and build meaningful products. I've developed a solid foundation in DSA and web development, always eager to grow. <br><br>I thrive on collaboration and aim to create innovative solutions that tackle real-world challenges. I'm ready to bring my skills and enthusiasm to a dynamic team. <br><br>Let's create something extraordinary together."
+    },
+    "projects": [
+        {
+            "imgSrc": "Picture1.png",
+            "alt": "project1",
+            "videoSrc": "Verify Account - Brave 2024-08-24 17-08-53.mp4",
+            "description": "Inputs numeric verification code entered by the user in a smooth manner",
+            "githubLink": "https://github.com/suvrat007/Projects/tree/projects/varify%20account%20ui"
+        },
+        {
+            "imgSrc": "Picture2.png",
+            "alt": "project2",
+            "videoSrc": "Theme Clock - Brave 2024-08-24 17-10-45.mp4",
+            "description": "Dynamic customisable clock showing time at present.",
+            "githubLink": "https://github.com/suvrat007/Projects/tree/projects/theme%20clock"
+        },
+        {
+            "imgSrc": "Picture3.png",
+            "alt": "project3",
+            "videoSrc": "Testimonial Box - Brave 2024-08-24 17-15-00.mp4",
+            "description": "Shows testimonials by fetching APIs and making a timer.",
+            "githubLink": "https://github.com/suvrat007/Projects/tree/projects/testiminial%20box%20switcher"
+        },
+        {
+            "imgSrc": "Picture4.png",
+            "alt": "project4",
+            "videoSrc": "Pokedex - Brave 2024-08-24 17-22-36.mp4",
+            "description": "Made a pokemon information centre taking info by fetching API.",
+            "githubLink": "https://github.com/suvrat007/Projects/tree/projects/pokedex"
+        },
+        {
+            "imgSrc": "Picture5.png",
+            "alt": "project5",
+            "videoSrc": "Catch The Insect - Brave 2024-08-24 17-20-39.mp4",
+            "description": "A silly little game using the blend HTML, CSS, & JS",
+            "githubLink": "https://github.com/suvrat007/Projects/tree/projects/insect%20catch%20game"
+        },
+        {
+            "imgSrc": "Picture6.png",
+            "alt": "project6",
+            "videoSrc": "Quiz App - Brave 2024-08-24 17-23-38.mp4",
+            "description": "A little and fun Quiz with hard coded questions and using javascript",
+            "githubLink": "https://github.com/suvrat007/Projects/tree/projects/quiz%20app"
+        },
+        {
+            "imgSrc": "Picture7.png",
+            "alt": "project7",
+            "videoSrc": "Todo List - Brave 2024-08-24 17-24-58.mp4",
+            "description": "Made a notes app using Local storage of browser and javascript",
+            "githubLink": "https://github.com/suvrat007/Projects/tree/projects/todo%20list"
+        }
+    ]
+}

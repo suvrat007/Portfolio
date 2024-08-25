@@ -1,3 +1,5 @@
+
+
 const slider = document.getElementById('slider');
 const slides = document.querySelectorAll('.slide');
 let currentIndex = 0;
@@ -49,6 +51,8 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('.nav-item a');
 
@@ -64,3 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+
