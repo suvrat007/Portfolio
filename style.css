@@ -498,7 +498,7 @@ a{
         min-width: 30%;
     }
 }
-@media (max-width: 800px) {
+@media (max-width: 700px) {
     body{
         margin: 0 auto;
         max-width: 98%;
@@ -536,4 +536,43 @@ a{
     .slide{
         min-width: 30%;
     }
+
+}
+
+
+@media (max-width: 500px) {
+    body{
+        margin: 0 auto;
+        max-width: 0%;
+        overflow-x: hidden;
+    }
+    .intro{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .bg-image{
+        position: relative;
+        max-width: 400px;
+    }
+    
+    .about-me{
+        font-size: .8em;
+        
+    }
+    .about{
+        position: relative;
+        display: flex;
+        flex-direction: column;        
+        
+    }
+    .work-together{
+        min-height: 15em;
+    }
+    .slide{
+        min-width: 30%;
+    }
+    
 }
