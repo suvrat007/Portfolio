@@ -1,11 +1,36 @@
+let currentIndex = 0; 
+let slidesToShow = 4; // Default number of slides visible
 
+// Function to calculate the number of slides to show based on screen width
+function updateSlidesToShow() {
+    const screenWidth = window.innerWidth;
 
-const slider = document.getElementById('slider');
-const slides = document.querySelectorAll('.slide');
-let currentIndex = 0;
+    if (screenWidth > 1200) {
+        slidesToShow = 4;
+    } else if (screenWidth > 800) {
+        slidesToShow = 3;
+    } else if (screenWidth > 600) {
+        slidesToShow = 2;
+    } else {
+        slidesToShow = 1;
+    }
 
+    currentIndex = 0; // Reset index to avoid out-of-bounds
+    updateSlider();
+}
+
+// Function to update the slider's position
+function updateSlider() {
+    const slideWidth = slides[0].offsetWidth + parseFloat(getComputedStyle(slides[0]).marginRight);
+    const totalWidth = slideWidth * slidesToShow;
+
+    slider.style.width = `${totalWidth}px`; // Set the slider container width
+    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+// Event listener for the next button
 document.getElementById('next').addEventListener('click', () => {
-    if (currentIndex < slides.length - 4) { // Adjust the number based on visible slides
+    if (currentIndex < slides.length - slidesToShow) {
         currentIndex++;
     } else {
         currentIndex = 0; // Reset to the first slide
@@ -13,19 +38,22 @@ document.getElementById('next').addEventListener('click', () => {
     updateSlider();
 });
 
+// Event listener for the previous button
 document.getElementById('prev').addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
     } else {
-        currentIndex = slides.length - 4; // Go to the last visible group of slides
+        currentIndex = slides.length - slidesToShow; // Go to the last visible group of slides
     }
     updateSlider();
 });
 
-function updateSlider() {
-    const slideWidth = slides[0].offsetWidth + parseFloat(getComputedStyle(slides[0]).marginRight);
-    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
-}   
+// Event listener for window resize to update the number of slides to show
+window.addEventListener('resize', updateSlidesToShow);
+
+// Initialize slider on page load
+updateSlidesToShow();
+
 
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -456,13 +456,11 @@ a{
     }
 
     .left-margin{
-        /* display: none; */
+        
         position: relative;      
         font-size: 1.35em;
         color: white;     
         border: red 2px solid;
-        margin-left: 50%;
-        
         /* writing-mode: horizontal-tb;  */
     }
     .social-media-icons{
