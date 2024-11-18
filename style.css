@@ -429,7 +429,9 @@ a{
     cursor: pointer;
 }
 
-
+.social-media-icons-phone{
+    display: none;
+}
 @media (max-width: 450px) {
     .nav-item{
         align-items: center;
@@ -456,15 +458,18 @@ a{
     }
 
     .left-margin{
-        
+        display: none;        
         position: relative;      
         font-size: 1.35em;
         color: white;     
         border: red 2px solid;
         /* writing-mode: horizontal-tb;  */
     }
-    .social-media-icons{
-        flex-direction: row;
+    .social-media-icons-phone{
+        display: block;
+        margin-top: 1.75em;
+        font-size: 2em;
+        word-spacing: .8em;
     }
 
     .wave-border{
@@ -503,5 +508,7 @@ a{
         text-align: center;
         margin-bottom: 4rem;
     }
+    
+    
     
 }
