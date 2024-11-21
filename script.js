@@ -1,58 +1,114 @@
-let currentIndex = 0; 
-let slidesToShow = 4; // Default number of slides visible
+const slider = document.getElementById('slider');
+const paginationContainer = document.querySelector('.pagination');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+let projects = [];
+let currentSlide = 0;
 
-// Function to calculate the number of slides to show based on screen width
-function updateSlidesToShow() {
-    const screenWidth = window.innerWidth;
+// Fetch the JSON data
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+        projects = data.projects; // Load projects from the JSON file
+        renderProjects();
+        createBubbles();
+        updateSlider();
+    });
 
-    if (screenWidth > 1200) {
-        slidesToShow = 4;
-    } else if (screenWidth > 800) {
-        slidesToShow = 3;
-    } else if (screenWidth > 600) {
-        slidesToShow = 2;
-    } else {
-        slidesToShow = 1;
-    }
+// Render project data into the slider
+function renderProjects() {
+    projects.forEach((project, index) => {
+        const slide = document.createElement('li');
+        slide.classList.add('slide');
+        if (index === 0) slide.classList.add('show'); // Show the first slide initially
 
-    currentIndex = 0; // Reset index to avoid out-of-bounds
-    updateSlider();
+        slide.innerHTML = `
+            <div class="projContainer">
+                <img src="${project.imgSrc}" alt="${project.alt}" class="projPic">
+                <video src="${project.videoSrc}" class="projVid" muted loop></video>
+            </div>
+            <div class="textBox">
+                <p id="slider-content">${project.description}</p>
+                <a href="${project.githubLink}" class="slider-logo"><i class="fab fa-github"></i></a>
+            </div>
+        `;
+
+        slider.appendChild(slide);
+    });
+
+    // Add hover events to handle swapping and video playback
+    const containers = document.querySelectorAll('.projContainer');
+    containers.forEach(container => {
+        const image = container.querySelector('.projPic');
+        const video = container.querySelector('.projVid');
+
+        container.addEventListener('mouseenter', () => {
+            image.style.display = 'none';
+            video.style.display = 'block';
+            video.play();
+        });
+
+        container.addEventListener('mouseleave', () => {
+            video.pause();
+            video.style.display = 'none';
+            image.style.display = 'block';
+        });
+    });
 }
 
-// Function to update the slider's position
+// Create bubbles for each slide
+function createBubbles() {
+    projects.forEach((_, index) => {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        if (index === 0) bubble.classList.add('active');
+        bubble.dataset.index = index;
+        paginationContainer.appendChild(bubble);
+    });
+
+    // Add click events to bubbles
+    document.querySelectorAll('.bubble').forEach(bubble => {
+        bubble.addEventListener('click', (e) => {
+            currentSlide = parseInt(e.target.dataset.index, 10);
+            updateSlider();
+        });
+    });
+}
+
+// Update the slider position and active bubble
 function updateSlider() {
-    const slideWidth = slides[0].offsetWidth + parseFloat(getComputedStyle(slides[0]).marginRight);
-    const totalWidth = slideWidth * slidesToShow;
+    const slides = document.querySelectorAll('.slide');
+    const slideWidth = slides[0].clientWidth;
 
-    slider.style.width = `${totalWidth}px`; // Set the slider container width
-    slider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
+    const bubbles = document.querySelectorAll('.bubble');
+    bubbles.forEach(bubble => bubble.classList.remove('active'));
+    bubbles[currentSlide].classList.add('active');
 }
 
-// Event listener for the next button
-document.getElementById('next').addEventListener('click', () => {
-    if (currentIndex < slides.length - slidesToShow) {
-        currentIndex++;
-    } else {
-        currentIndex = 0; // Reset to the first slide
-    }
+// Navigate to the previous slide
+prevButton.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + projects.length) % projects.length;
     updateSlider();
 });
 
-// Event listener for the previous button
-document.getElementById('prev').addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-    } else {
-        currentIndex = slides.length - slidesToShow; // Go to the last visible group of slides
-    }
+// Navigate to the next slide
+nextButton.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % projects.length;
     updateSlider();
 });
 
-// Event listener for window resize to update the number of slides to show
-window.addEventListener('resize', updateSlidesToShow);
+// Auto-slide every 5 seconds
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % projects.length;
+    updateSlider();
+}, 13500);
 
-// Initialize slider on page load
-updateSlidesToShow();
+// Adjust the slider on window resize
+window.addEventListener('resize', updateSlider);
+
+
 
 
 
@@ -62,6 +118,8 @@ document.addEventListener("DOMContentLoaded", function () {
     slides.forEach(slide => {
         const image = slide.querySelector('.projPic');
         const video = slide.querySelector('.projVid');
+        video.style.display = 'none'; // Hide the video
+
 
         slide.addEventListener('mouseenter', function () {
             image.style.display = 'none'; // Hide the image
@@ -97,5 +155,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+    const projectsSection = document.getElementById('Project'); // The section to stop following before
+    const navbarHeight = navbar.offsetHeight;
 
+    window.addEventListener('scroll', () => {
+        const stopPosition = projectsSection.getBoundingClientRect().top;
+
+        if (stopPosition <= navbarHeight) {
+            // When the scroll reaches the Projects section
+            navbar.classList.add('nav-hidden');
+        } else {
+            // While scrolling above the Projects section
+            navbar.classList.remove('nav-hidden');
+        }
+    });
+});
 
