@@ -105,8 +105,17 @@ setInterval(() => {
     updateSlider();
 }, 13500);
 
+
+
 // Adjust the slider on window resize
 window.addEventListener('resize', updateSlider);
+
+const navToggle = document.getElementById("nav-toggle");
+const navItems = document.getElementById("nav-items");
+
+navToggle.addEventListener("click", () => {
+    navItems.classList.toggle("active"); // Toggle the active class to show/hide the menu
+});
 
 
 

@@ -2,7 +2,7 @@
     "navItems": [
         {"label": "Home", "href": "#intro"},
         {"label": "About Me", "href": "#about"},
-        {"label": "HIRE ME", "href": "#", "type": "button"},
+        {"label": "HIRE ME", "href": "https://docs.google.com/document/d/1idQNUuInV8q5M1O1fSLmEOO2v1LGlFZ2oT9NsOygtIM/edit?tab=t.0", "type": "button"},
         {"label": "Projects", "href": "#proj"},
         {"label": "Contact Info", "href": "#contact"}
     ],
