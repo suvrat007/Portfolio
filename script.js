@@ -110,16 +110,21 @@ setInterval(() => {
 // Adjust the slider on window resize
 window.addEventListener('resize', updateSlider);
 
-const navToggle = document.getElementById("nav-toggle");
-const navItems = document.getElementById("nav-items");
+const navToggle = document.querySelector(".nav-toggle");
+const navItems = document.querySelector(".nav-items");
 
 navToggle.addEventListener("click", () => {
-    navItems.classList.toggle("active"); // Toggle the active class to show/hide the menu
+    navItems.classList.add("active"); // Toggle the active class to show/hide the menu
+});
+
+const backButton = document.querySelector(".back");
+backButton.addEventListener("click", () => {
+    navItems.classList.remove("active"); // Toggle the active class to show/hide the menu
 });
 
 
 
-
+// play video on hover
 
 document.addEventListener("DOMContentLoaded", function () {
     const slides = document.querySelectorAll('.slide');
@@ -147,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+// smooth section teleporter
 document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('.nav-item a');
 
@@ -164,21 +169,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const navbar = document.getElementById('navbar');
-    const projectsSection = document.getElementById('Project'); // The section to stop following before
-    const navbarHeight = navbar.offsetHeight;
-
-    window.addEventListener('scroll', () => {
-        const stopPosition = projectsSection.getBoundingClientRect().top;
-
-        if (stopPosition <= navbarHeight) {
-            // When the scroll reaches the Projects section
-            navbar.classList.add('nav-hidden');
-        } else {
-            // While scrolling above the Projects section
-            navbar.classList.remove('nav-hidden');
-        }
-    });
-});
 
