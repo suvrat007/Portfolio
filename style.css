@@ -523,7 +523,9 @@ body{
     color: white;
     cursor: pointer;
 }
-
+.back{
+    display: none;
+}
 
 @media (max-width: 550px) {
     
@@ -649,7 +651,7 @@ body{
         font: inherit;
         border: none;
         letter-spacing: 2px;
-
+        display: block;
     }
 
     .nav-toggle {
