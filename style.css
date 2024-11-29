@@ -685,5 +685,6 @@ body{
         font-size: 2em;
         align-items: center;
         padding:0 .2rem;
+        justify-content: center;
     }
 }
