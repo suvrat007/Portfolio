@@ -446,10 +446,10 @@ body{
     top: 50%;
     transform: translateY(-50%);
     background-color: transparent;
+    opacity:75%;
     color: black;
     border: none;
-    border-radius: 50%;
-    padding: 10px;
+    padding: 0px 5px;
     cursor: pointer;
     font-size: 2rem;
     z-index: 1000;
@@ -463,8 +463,14 @@ body{
     right: 20px;
 }
 
+#prev:active, #next:active{
+    background-color: #afafaf;
+
+}
+
 .nav-button:hover {
-    background-color: #555;
+    background-color: #b5b5b5;
+    border-radius: 10%;
 }
 
 /* Pagination bubbles container */
@@ -617,10 +623,10 @@ body{
     }
        
     #prev{
-        left: -5px;
+        left: 0;
     }
     #next{
-        right: -5px;
+        right: 0;
     }
 /* Responsive Design */
     .nav-items.active {
@@ -666,5 +672,13 @@ body{
     }
     .nav-bar{
         background: transparent;
+    }
+    #prev:active, #next:active{
+        background-color: #afafaf;
+    }
+    
+    .nav-button:hover {
+        background-color: #b5b5b5;
+        border-radius:20%;
     }
 }
