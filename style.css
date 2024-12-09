@@ -141,6 +141,7 @@ body{
     font-size: 0.9em;
     border-radius: 20px;
     padding: 10px 20px;
+    cursor: pointer;
 }
 .item{
     text-decoration: none;
